@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	div#header, div#content, div#footer {border-bottom: 2px solid gray; margin-bottom: 10px;}
+	div.tableLayout input[type="text"] {width:20px; text-align: right; margin-left: 5px;}
+	input#showSpeed {width:40px;}
+	div.female, div.male {margin:5px}
+	div.female span, div.male span {display:inline-block; width: 60px; border-style: solid; border-width: 1px; padding:2px;}
+	div.female span {border-color: pink;}
+	div.male span {border-color: green;}
+	
+	table#layout {width:98%; margin:0 auto; text-align:right; border-collapse:collapse; border: 2px solid black;}
+	#layout th, #layout td {padding:5px 10px; text-align:center; width:8%; height: 25px; border: 1px solid gray;}
+	.selected {
+		background-color: gray;
+		-webkit-transition: background-color 1000ms linear;
+		-moz-transition: background-color 1000ms linear;
+		-o-transition: background-color 1000ms linear;
+		-ms-transition: background-color 1000ms linear;
+		transition: background-color 1000ms linear;
+	}
+</style>
+<title>Seat Assignment App</title>
+</head>
+<body>
+
+	<div id="header">
+		<h3>자리 바꾸기</h3>
+		<div>
+			<div class="tableLayout">
+				<table>
+					<tr><td>
+						속도 : <input type="text" id="showSpeed" value="1000"/>ms
+					</td></tr>
+					<tr><td>
+						좌석 배치 :<input type="text" id="tableRow" value="4" />행<input type="text" id="tableCol" value="4" />열
+						<input type="button" id="drawTableLayout" value="그리기" />
+					</td></tr>
+				</table>
+			</div>
+			<div>
+				<span>List 불러오기 : </span>
+				<input type="file" id="btnLoadList" />
+				<span id="femaleSize"></span>
+				<span id="maleSize"></span>
+				<input type="button" value="자리 배정" id="matchingPartner" />
+			</div>
+			<div id="rawListContainer">
+				<div class="female">
+				</div>
+				<div class="male">
+				</div>
+			</div>
+		</div>
+		<div>
+			
+		</div>
+	</div>
+	
+	<div id="content">
+		<table id="layout">
+		</table>
+	</div>
+	
+	<div id="footer">
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="./seat-assignment.js"></script>
+</body>
+</html>
